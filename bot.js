@@ -18,11 +18,14 @@ bot.on('message', function(user, userID, channelID, message, evt) {
         const args = message.substring(5).split('->');
         if(args.length === 1) {
             //check for help
-            if(args[0] === "help" || args[0] === "h");
-            bot.sendMessage({
-                to: channelID,
-                message: "Type !KMB (killer) (victim) to make your meme."
-            });
+            if(args[0] === "help" || args[0] === "h") {
+                bot.sendMessage({
+                    to: channelID,
+                    message: "Type !KMB (killer) (victim) to make your meme."
+                });
+            } else {
+                return;
+            }
         }
         const killer = args[0];
         const victim = args[1];
