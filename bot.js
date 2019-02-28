@@ -10,7 +10,7 @@ const bot = new Discord.Client({
 
 const strsizemult = 5; // Size of a single character in string
 
-bot.on('message', function(user, userID, channelID, message, evt) {
+bot.on('message', async function(user, userID, channelID, message, evt) {
     if(user.bot === true) {
         return;
     }
@@ -21,7 +21,7 @@ bot.on('message', function(user, userID, channelID, message, evt) {
             if(args[0] === "help" || args[0] === "h") {
                 bot.sendMessage({
                     to: channelID,
-                    message: "Type !KMB (killer) (victim) to make your meme."
+                    message: "Type !KMB (killer) -> (victim) to make your meme."
                 });
             } else {
                 return;
@@ -32,7 +32,7 @@ bot.on('message', function(user, userID, channelID, message, evt) {
         const memeBuf = await jimp.read('widow.png'); // store image buffer here
         const widowheight = memeBuf.bitmap.height;
         const widowlen = memeBuf.bitmap.length;
-        const newwidth = strsizemult * (killer.length + victim.length);
+        const newwidth = strsizemult * (killer.length + victim.length) + widowheight;
         memeBuf.contain(newwidth, widowheight, jimp.HORIZONTAL_ALIGN_CENTER);
         const font = await jimp.loadFont(jimp.FONT_SANS_10_BLACK);
         memeBuf.print(font, 0, 0, killer);
