@@ -1,0 +1,8 @@
+{
+    "name": "KillfeedMemeBot",
+    "version": "1.0.0",
+    "description": "!KMB help",
+    "main": "bot.js",
+    "author": "Maydit",
+    "dependencies": {}
+}
