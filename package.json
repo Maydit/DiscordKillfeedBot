@@ -1,10 +1,14 @@
 {
-    "name": "KillfeedMemeBot",
+    "name": "killfeedmemebot",
     "version": "1.0.0",
     "description": "!KMB help",
     "repository": {
         "type": "git",
         "url": "https://github.com/Maydit/DiscordKillfeedBot"
+    },
+    "scripts": {
+        "start": "node bot.js",
+        "test": "node test.js"
     },
     "license": "MIT",
     "main": "bot.js",

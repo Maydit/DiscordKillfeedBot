@@ -32,7 +32,7 @@ bot.on('message', async function(user, userID, channelID, message, evt) {
         const memeBuf = await jimp.read('widow.png'); // store image buffer here
         const widowheight = memeBuf.bitmap.height;
         const widowlen = memeBuf.bitmap.length;
-        const newwidth = strsizemult * (killer.length + victim.length) + widowheight;
+        const newwidth = strsizemult * (killer.length + victim.length) + widowheightg;
         memeBuf.contain(newwidth, widowheight, jimp.HORIZONTAL_ALIGN_CENTER);
         const font = await jimp.loadFont(jimp.FONT_SANS_10_BLACK);
         memeBuf.print(font, 0, 0, killer);
