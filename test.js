@@ -17,8 +17,11 @@ async function composeimg(killer, img1name, victim, img2name){
     const newwidthr = newwidthl + strsizemult * victim.length;
     img1.contain(newwidthl, widowheight, jimp.HORIZONTAL_ALIGN_RIGHT);
     img1.contain(newwidthr, widowheight, jimp.HORIZONTAL_ALIGN_LEFT);
-    const font = await jimp.loadFont(jimp.FONT_SANS_32_BLACK);
+    const font = await jimp.loadFont(jimp.FONT_SANS_32_WHITE);
     img1.print(font, strsizemult, widowheight / 4, killer.toUpperCase());
+    /*img1.color([
+        {apply: 'mix', params: ['red', 100]}
+    ])*/
     img1.print(font, newwidthl + strsizemult, widowheight / 4, victim.toUpperCase());
     img1.quality(100).write(imgExport);
 }
